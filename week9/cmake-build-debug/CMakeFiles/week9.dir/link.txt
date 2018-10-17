@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/week9.dir/exercise_1.c.o  -o week9 
