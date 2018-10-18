@@ -1,59 +1,62 @@
 #include <stdio.h>
 #include <limits.h>
+#include <stdlib.h>
 
-const int SIZE_OF_VIRTUAL_MEMORY = 1000;
+int frames_number;
 
-int max_frames_number = 100;
+int *frames_addresses;
+int *frames_age;
 
-int v_pages_priority[1000];
-
-int v_pages_presence[1000];
-
-int frames_number = 0;
-
-int reference(int index)
+int reference(int virtual_address)
 {
-    // decreasing priority
-    for (int i = 0; i < SIZE_OF_VIRTUAL_MEMORY; i++)
+    // aging
+    for (int i = 0; i < frames_number; i++)
     {
-        v_pages_priority[i]--;
+        if (frames_age[i] != INT_MAX)
+        {
+            frames_age[i]++;
+        }
     }
 
-    if (v_pages_presence[index] == 0 && frames_number == max_frames_number)
+    // if page found in table
+    for (int i = 0; i < frames_number; i++)
     {
-        int min_priority = INT_MAX;
-        int min_priority_index = INT_MAX;
-        for (int i = 0; i < 1000; i++)
+        if (frames_addresses[i] == virtual_address)
         {
-            if (v_pages_priority[i] < min_priority)
-            {
-                min_priority = v_pages_priority[i];
-                min_priority_index = i;
-            }
+            frames_age[i] = 0;
+            // hitrate
+            return 0;
         }
-        v_pages_priority[index] = INT_MAX;
-        v_pages_presence[index] = 1;
-        //missrate
-        return 1;
     }
-    else
+
+    int oldest_page_index = 0;
+    int oldest_page_age = 0;
+
+    for (int i = 0; i < frames_number; i++)
     {
-        if (v_pages_presence[index] == 0)
-            frames_number++;
-        v_pages_priority[index] = INT_MAX;
-        v_pages_presence[index] = 1;
-        //hitrate
-        return 0;
+        if (frames_age[i] > oldest_page_age)
+        {
+            oldest_page_age = frames_age[i];
+            oldest_page_index = i;
+        }
     }
+
+    frames_addresses[oldest_page_index] = virtual_address;
+    frames_age[oldest_page_index] = 0;
+
+    // missrate
+    return 1;
 }
 
 void initialize()
 {
-    frames_number = 0;
-    for (int i = 0; i < SIZE_OF_VIRTUAL_MEMORY; i++)
+    frames_addresses = malloc(sizeof(int) * frames_number);
+    frames_age = malloc(sizeof(int) * frames_number);
+
+    for (int i = 0; i < frames_number; i++)
     {
-        v_pages_presence[i] = 0;
-        v_pages_priority[i] = 0;
+        frames_addresses[i] = -1;
+        frames_age[i] = INT_MAX;
     }
 }
 
@@ -61,7 +64,7 @@ int calculate()
 {
     initialize();
 
-    printf("Number of page frames: %d\n", max_frames_number);
+    printf("Number of page frames: %d\n", frames_number);
 
     FILE *file = fopen("input.txt", "r");
 
@@ -106,10 +109,10 @@ int calculate()
 
 int main()
 {
-    max_frames_number = 10;
+    frames_number = 10;
     calculate();
-    max_frames_number = 50;
+    frames_number = 50;
     calculate();
-    max_frames_number = 100;
+    frames_number = 100;
     calculate();
 }
