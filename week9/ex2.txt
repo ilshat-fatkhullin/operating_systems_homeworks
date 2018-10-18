@@ -1,0 +1,23 @@
+There are two different ways to decrease hit ratio:
+
+The first, most primitive one, is just to constuct a sequence, which always references frames, that are not in physical memory table.
+
+For example:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20...
+
+Since current sequence references unique frame at each clock, at the moment, when physical memory table will overflow it needs to replace one of its cell.
+
+The second way is to break expectations that last recently used frame will be referenced in the near future:
+
+So if number of frames in our physical memory is 5, we have:
+1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6...
+
+One of the ways to increase hit ratio is to meet our expectations that last recently used frame will be referenced in the near future:
+
+For number of frames equals to 5 we have:
+1 2 3 4 5 6 2 3 4 5 6
+
+To have the best hit rate case we shouldn't make any replacements at all:
+
+For number of frames equals to 5 we have:
+5 3 4 1 5 2 3 4 5 2 3 1
