@@ -48,10 +48,10 @@ RM = /snap/clion/44/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ilshat/operating_systems_homeworks/week9
+CMAKE_SOURCE_DIR = /home/ilshat/operating_systems_homeworks/week11
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug/CMakeFiles /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug/CMakeFiles /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named week9
+# Target rules for targets named week11
 
 # Build rule for target.
-week9: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 week9
-.PHONY : week9
+week11: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 week11
+.PHONY : week11
 
 # fast build rule for target.
-week9/fast:
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/build
-.PHONY : week9/fast
+week11/fast:
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/build
+.PHONY : week11/fast
 
-exercise_1.o: exercise_1.c.o
+ex4.o: ex4.c.o
 
-.PHONY : exercise_1.o
+.PHONY : ex4.o
 
 # target to build an object file
-exercise_1.c.o:
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/exercise_1.c.o
-.PHONY : exercise_1.c.o
+ex4.c.o:
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/ex4.c.o
+.PHONY : ex4.c.o
 
-exercise_1.i: exercise_1.c.i
+ex4.i: ex4.c.i
 
-.PHONY : exercise_1.i
+.PHONY : ex4.i
 
 # target to preprocess a source file
-exercise_1.c.i:
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/exercise_1.c.i
-.PHONY : exercise_1.c.i
+ex4.c.i:
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/ex4.c.i
+.PHONY : ex4.c.i
 
-exercise_1.s: exercise_1.c.s
+ex4.s: ex4.c.s
 
-.PHONY : exercise_1.s
+.PHONY : ex4.s
 
 # target to generate assembly for a file
-exercise_1.c.s:
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/exercise_1.c.s
-.PHONY : exercise_1.c.s
+ex4.c.s:
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/ex4.c.s
+.PHONY : ex4.c.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... week9"
-	@echo "... exercise_1.o"
-	@echo "... exercise_1.i"
-	@echo "... exercise_1.s"
+	@echo "... week11"
+	@echo "... ex4.o"
+	@echo "... ex4.i"
+	@echo "... ex4.s"
 .PHONY : help
 
 

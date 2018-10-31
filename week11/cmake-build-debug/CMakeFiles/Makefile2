@@ -59,45 +59,45 @@ RM = /snap/clion/44/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ilshat/operating_systems_homeworks/week9
+CMAKE_SOURCE_DIR = /home/ilshat/operating_systems_homeworks/week11
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/week9.dir
+# Target rules for target CMakeFiles/week11.dir
 
 # All Build rule for target.
-CMakeFiles/week9.dir/all:
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/depend
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilshat/operating_systems_homeworks/week9/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target week9"
-.PHONY : CMakeFiles/week9.dir/all
+CMakeFiles/week11.dir/all:
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/depend
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ilshat/operating_systems_homeworks/week11/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target week11"
+.PHONY : CMakeFiles/week11.dir/all
 
 # Include target in all.
-all: CMakeFiles/week9.dir/all
+all: CMakeFiles/week11.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/week9.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/week9.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week9/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/week9.dir/rule
+CMakeFiles/week11.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/week11.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ilshat/operating_systems_homeworks/week11/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/week11.dir/rule
 
 # Convenience name for target.
-week9: CMakeFiles/week9.dir/rule
+week11: CMakeFiles/week11.dir/rule
 
-.PHONY : week9
-
-# clean rule for target.
-CMakeFiles/week9.dir/clean:
-	$(MAKE) -f CMakeFiles/week9.dir/build.make CMakeFiles/week9.dir/clean
-.PHONY : CMakeFiles/week9.dir/clean
+.PHONY : week11
 
 # clean rule for target.
-clean: CMakeFiles/week9.dir/clean
+CMakeFiles/week11.dir/clean:
+	$(MAKE) -f CMakeFiles/week11.dir/build.make CMakeFiles/week11.dir/clean
+.PHONY : CMakeFiles/week11.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/week11.dir/clean
 
 .PHONY : clean
 
